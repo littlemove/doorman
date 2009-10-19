@@ -1,7 +1,8 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
+require 'rake/gempackagetask'
 
 desc 'Default: run unit tests.'
 task :default => :test
