@@ -32,12 +32,13 @@ spec = Gem::Specification.new do |s|
   #s.homepage = "http://yafflers.example.com/"
   s.platform = Gem::Platform::RUBY
   s.summary = "Super simple (aka stupid) white/black list manager"
-  s.files = PKG_FILES.to_a s.require_path = "lib"
+  s.files = PKG_FILES.to_a
+  s.require_path = "lib"
   s.has_rdoc = false
   s.extra_rdoc_files = ["README"]
 end
 
 desc 'Turn this plugin into a gem.'
-Rake::GemPackageTask.new(spec) do
-  |pkg| pkg.gem_spec = spec
-end 
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.gem_spec = spec
+end
