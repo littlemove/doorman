@@ -1,0 +1,41 @@
+Doorman
+=======
+
+Doorman it's a super simple (aka stupid) white/black list manager.
+
+Doorman acts  different depending on the kind of list you're asking:
+        If you ask if somenthing could pass based on the whitelist it would let throught only entities present on the whitelist.
+        If you ask if somenthing could pass based on the blacklist it would let throught everything except for entities present on the blacklist.
+
+You'll define those list on a yaml file like this:
+
+white: [vicentin@email.com, .*@simplelogica.net]
+
+black: [loki@email.com, .*@comunistasnazis.net] 
+         
+It allows ruby regular expresions as shown.
+
+Configuration
+=============
+
+For Rails projects:
+    
+    config.gem 'doorman'
+
+    Doorman::CONFIG_PATH = "path-to-your-yml"
+
+Example
+=======
+
+Doorman::Whitelist.come_in?('vicentin@email.com') # => true
+Doorman::Whitelist.come_in?('diego@simplelogica.net') # => true
+Doorman::Whitelist.come_in?('someone@email.com') # => false
+
+Doorman::Blacklist.come_in?('vicentin@email.com') # => true
+Doorman::Blacklist.come_in?('diego@simplelogica.net') # => true
+Doorman::Blacklist.come_in?('loki@email.com') # => false
+Doorman::Blacklist.come_in?('rouco@comunistasnazis.net') # => false  
+
+I think you've got the idea.
+
+Copyright (c) 2009 Diego Fernández, released under the MIT license
