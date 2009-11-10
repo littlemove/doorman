@@ -22,7 +22,7 @@ For Rails projects:
     
     config.gem 'doorman'
 
-    Doorman::CONFIG_PATH = "path-to-your-yml"
+    Doorman::CONFIG_FILE_PATH = "path-to-your-yml"
 
 Example
 =======
